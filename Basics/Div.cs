@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Basics
 {
-	public class Div : Command.Command
+	public class Div : Command.Computer
 	{
 		private string _name = "Div";
 		public Div()
@@ -11,7 +11,7 @@ namespace Basics
 		{
 			get { return _name; }
 		}
-		public string Execute(string[] values)
+		public double Execute(string[] values)
 		{
 			//We square the first member cause we divide 
 			//it by itself once on the scope
@@ -20,7 +20,7 @@ namespace Basics
 			{
 				result /= Convert.ToDouble(val);
 			}
-			return result.ToString();
+			return result;
 		}
 	}
 }

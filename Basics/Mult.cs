@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Basics
 {
-	public class Mult : Command.Command
+	public class Mult : Command.Computer
 	{
 		private string _name = "Mult";
 		public Mult()
@@ -11,14 +11,14 @@ namespace Basics
 		{
 			get { return _name; }
 		}
-		public string Execute(string[] values)
+		public double Execute(string[] values)
 		{
 			double result = 1;
 			foreach (string val in values)
 			{
 				result *= Convert.ToDouble(val);
 			}
-			return result.ToString();
+			return result;
 		}
 	}
 }

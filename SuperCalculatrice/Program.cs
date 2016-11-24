@@ -32,30 +32,64 @@ namespace SuperCalculatrice
 			while (input != "quit")
 			{
 				string[] splitinput = input.Split(new Char[] { ' ' });
+				List<string> values = splitinput.ToList();
+				//remove the user's command to only keep arguments 
+				values.RemoveAt(0);
 
-				if (splitinput[0] != "")
+				int counterrors = 0;
+				double number;
+				//Check if the parameters are numbers
+				foreach (string val in values)
 				{
-					Console.WriteLine("test2");
-					AssemblySearch result;
-					foreach (string lib in filePaths)
+					if (Double.TryParse(val, out number) == false)
 					{
-						// Load assemblies .dll
-						Assembly assembly = Assembly.LoadFrom(lib);
-						result = new AssemblySearch(assembly, valid_input, splitinput);
-						valid_input = result.Compute();
-						//Console.WriteLine(valid_input);
-					}
-
-					if (valid_input == false)
-					{
-						Console.WriteLine("Veuillez entrer une fonction valide");
+						counterrors += 1;
 					}
 				}
-				else 
+
+				if (counterrors > 0)
 				{
-					Console.WriteLine("Veuillez entrer une commande et un argument");
+					Console.WriteLine("Veuillez entrer un/des nombre(s) en parametre");
 				}
 
+				else
+				{
+					if (splitinput[0] != "" || splitinput[1] != "")
+					{
+						List<bool> valid_list = new List<bool>();
+						int valid_count = 0;
+						AssemblySearch result;
+						foreach (string lib in filePaths)
+						{
+							// Load assemblies .dll
+							Assembly assembly = Assembly.LoadFrom(lib);
+							result = new AssemblySearch(assembly, valid_input, splitinput);
+							valid_input = result.Compute();
+							valid_list.Add(valid_input);
+							Console.WriteLine(valid_input);
+						}
+
+						foreach (bool valid in valid_list)
+						{
+							if (valid == true)
+							{
+								valid_count += 1;
+							}
+						}
+						if (valid_count == 0)
+						{
+							Console.WriteLine("Veuillez entrer une fonction valide");
+						}
+					}
+					else if (splitinput.Length == 1)
+					{
+						Console.WriteLine("Veuillez entrer un argument");
+					}
+					else
+					{
+						Console.WriteLine("Veuillez entrer une commande et un argument");
+					}
+				}
 				input = Console.ReadLine();
 				valid_input = false;
 			}

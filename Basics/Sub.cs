@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Basics
 {
-	public class Sub : Command.Command
+	public class Sub : Command.Computer
 	{
 		private string _name = "Sub";
 		public Sub()
@@ -11,7 +11,7 @@ namespace Basics
 		{
 			get { return _name; }
 		}
-		public string Execute(string[] values)
+		public double Execute(string[] values)
 		{
 			//We take 2 times the first member cause we substract 
 			//it once on the scope
@@ -20,7 +20,7 @@ namespace Basics
 			{
 				result -= Convert.ToDouble(val);
 			}
-			return result.ToString();
+			return result;
 		}
 	}
 }

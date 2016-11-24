@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Basics
 {
-	public class Sum : Command.Command
+	public class Sum : Command.Computer
 	{
 		private string _name = "Sum";
 		public Sum()
@@ -11,14 +11,14 @@ namespace Basics
 		{
 			get { return _name; }
 		}
-		public string Execute(string[] values)
+		public double Execute(string[] values)
 		{
 			double result = 0;
 			foreach (string val in values)
 			{
 				result += Convert.ToDouble(val);
 			}
-			return result.ToString();
+			return result;
 		}
 	}
 }

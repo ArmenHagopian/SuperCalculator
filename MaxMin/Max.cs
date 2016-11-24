@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace MaxMin
 {
-	public class Max : Command.Command
+	public class Max : Command.Computer
 	{
 		private string _name = "Max";
 		public Max()
@@ -13,7 +13,7 @@ namespace MaxMin
 		{
 			get { return _name;}
 		}
-		public string Execute(string[] values)
+		public double Execute(string[] values)
 		{
 			List<double> valueslist = new List<double>();
 
@@ -24,7 +24,7 @@ namespace MaxMin
 			double max = valueslist.Max();
 			//double argument = Convert.ToDouble(values);
 			//double result = Math.Cos(argument);
-			return max.ToString();
+			return max;
 		}
 	}
 }
