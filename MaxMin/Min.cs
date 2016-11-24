@@ -5,10 +5,15 @@ namespace MaxMin
 {
 	public class Min : Command.Command
 	{
+		private string _name = "Min";
 		public Min()
 		{
 		}
-		public override string execute(string[] values)
+		public string Name
+		{
+			get { return _name; }
+		}
+		public string Execute(string[] values)
 		{
 			List<double> valueslist = new List<double>();
 

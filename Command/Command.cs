@@ -1,12 +1,13 @@
 ﻿using System;
 namespace Command
 {
-	public abstract class Command
+	public interface Command
 	{
-		public Command()
+		string Name
 		{
+			get;
 		}
 
-		public abstract string execute(string[] values);
+		string Execute(string[] values);
 	}
 }

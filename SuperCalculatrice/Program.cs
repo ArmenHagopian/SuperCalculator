@@ -27,27 +27,34 @@ namespace SuperCalculatrice
 
 			string input = Console.ReadLine();
 
-			bool valid_input = false;
-
+			string valid_input;
+			bool valid = false;
 			while (input != "quit")
 			{
 				string[] splitinput = input.Split(new Char[] { ' ' });
-
-				AssemblySearch result;
-				foreach (string lib in filePaths)
+				if (splitinput.Length != 0)
 				{
-					// Load assemblies .dll
-					Assembly assembly = Assembly.LoadFrom(lib);
-					result = new AssemblySearch(assembly, valid_input, splitinput);
-					valid_input = result.Compute();
+					Console.WriteLine("test2");
+					AssemblySearch result;
+					foreach (string lib in filePaths)
+					{
+						// Load assemblies .dll
+						Assembly assembly = Assembly.LoadFrom(lib);
+						result = new AssemblySearch(assembly, valid, splitinput);
+						valid_input = result.Compute();
+					}
+
+					//if (valid_input == false)
+					//{
+					//	Console.WriteLine("Veuillez entrer une fonction valide");
+					//}
 				}
-
-				if (valid_input == false)
+				else
 				{
-					Console.WriteLine("Veuillez entrer une fonction valide");
+					Console.WriteLine("Veuillez donner un argument à la commande (laissez un espace entre la commande et l'argument)");
 				}
 				input = Console.ReadLine();
-				valid_input = false;
+				//valid_input = false;
 			}
 
 		}

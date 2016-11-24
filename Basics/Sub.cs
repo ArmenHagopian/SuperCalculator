@@ -3,10 +3,15 @@ namespace Basics
 {
 	public class Sub : Command.Command
 	{
+		private string _name = "Sub";
 		public Sub()
 		{
 		}
-		public override string execute(string[] values)
+		public string Name
+		{
+			get { return _name; }
+		}
+		public string Execute(string[] values)
 		{
 			//We take 2 times the first member cause we substract 
 			//it once on the scope

@@ -3,10 +3,15 @@ namespace Basics
 {
 	public class Div : Command.Command
 	{
+		private string _name = "Div";
 		public Div()
 		{
 		}
-		public override string execute(string[] values)
+		public string Name
+		{
+			get { return _name; }
+		}
+		public string Execute(string[] values)
 		{
 			//We square the first member cause we divide 
 			//it by itself once on the scope
