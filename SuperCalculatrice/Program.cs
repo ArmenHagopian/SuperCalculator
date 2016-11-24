@@ -25,26 +25,6 @@ namespace SuperCalculatrice
 			// Take all libraries in the path
 			string[] filePaths = Directory.GetFiles(solutionpath, "*.dll");
 
-			List<Assembly> assemblies = new List<Assembly>();
-
-			//foreach (string i in filePaths)
-			//{
-			//	Console.WriteLine(i);
-			//	assemblies.Add(Assembly.LoadFrom(i));
-			//}
-
-			//Chargement des assembly .dll
-			//Assembly trigonometric = Assembly.LoadFrom("/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/Trigonometric.dll");
-			//assemblies.Add(trigonometric);
-			//Assembly maxmin = Assembly.LoadFrom("/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/MaxMin.dll");
-			//assemblies.Add(maxmin);
-			//Assembly basics = Assembly.LoadFrom("/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/Basics.dll");
-			//assemblies.Add(basics);
-			//foreach (Assembly a in assemblies)
-			//{
-			//	Console.WriteLine("icicicicici" + a.ToString());
-			//}
-
 			string input = Console.ReadLine();
 
 			bool valid_input = false;
@@ -56,17 +36,11 @@ namespace SuperCalculatrice
 				AssemblySearch result;
 				foreach (string lib in filePaths)
 				{
-					//Console.WriteLine(lib);
 					// Load assemblies .dll
 					Assembly assembly = Assembly.LoadFrom(lib);
 					result = new AssemblySearch(assembly, valid_input, splitinput);
 					valid_input = result.Compute();
 				}
-				//foreach (Assembly assembly in assemblies)
-				//{
-				//	result = new AssemblySearch(assembly, valid_input, splitinput);
-				//	valid_input = result.Compute();
-				//}
 
 				if (valid_input == false)
 				{
