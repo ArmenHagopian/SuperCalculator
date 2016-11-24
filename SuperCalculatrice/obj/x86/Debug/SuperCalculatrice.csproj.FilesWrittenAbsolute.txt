@@ -1,0 +1,7 @@
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/bin/Debug/SuperCalculatrice.exe.mdb
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/bin/Debug/SuperCalculatrice.exe
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/obj/x86/Debug/SuperCalculatrice.exe
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/obj/x86/Debug/SuperCalculatrice.exe.mdb
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/bin/Debug/Command.dll
+/Users/armengundes/Desktop/Labo_PI/Travail2/SuperCalculatrice/SuperCalculatrice/bin/Debug/Command.dll.mdb
