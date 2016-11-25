@@ -26,5 +26,13 @@ namespace Trigonometric
 			double result = Math.Cos(argument);
 			return result;
 		}
+		public string Error(string[] values)
+		{
+			if (values.Length > 1)
+			{
+				return "Veuillez entrer un seul argument";
+			}
+			return "";
+		}
 	}
 }

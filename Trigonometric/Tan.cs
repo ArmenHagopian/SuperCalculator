@@ -25,5 +25,13 @@ namespace Trigonometric
 			double result = Math.Tan(argument);
 			return result;
 		}
+		public string Error(string[] values)
+		{
+			if (values.Length > 1)
+			{
+				return "Veuillez entrer un seul argument";
+			}
+			return "";
+		}
 	}
 }
