@@ -15,23 +15,11 @@ namespace Trigonometric
 		{
 			if (values.Length > 1)
 			{
-				Console.WriteLine("Veuillez entrer un seul argument");
+				throw new ArgumentException("Veuillez entrer un seul argument");
 			}
-			//if (values.Length == 0)
-			//{
-			//	return "Veuillez donner un argument au tan (laissez un espace entre le tan et l'argument)";
-			//}
 			double argument = Convert.ToDouble(values[0]);
 			double result = Math.Tan(argument);
 			return result;
-		}
-		public string Error(string[] values)
-		{
-			if (values.Length > 1)
-			{
-				return "Veuillez entrer un seul argument";
-			}
-			return "";
 		}
 	}
 }

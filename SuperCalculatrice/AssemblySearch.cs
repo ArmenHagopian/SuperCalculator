@@ -28,18 +28,22 @@ namespace SuperCalculatrice
 					List<string> values = this._splitinput.ToList();
 					//Remove the user's command to only keep arguments 
 					values.RemoveAt(0);
-
-					Console.WriteLine(">>> Calling: " + t.Name);
-
-					// Création d'un instance de la classe de type "t"
-					// et on peut l'affecter à une variable de type "Command"
-					// puisqu'elle implémente cette interface
-					Command.Computer c = (Command.Computer)Activator.CreateInstance(t);
-
-					// Appel de la méthode "execute" avec les données
-					// entrees par l'utilisateur
-					Console.WriteLine("Result: " + c.Execute(values.ToArray()).ToString());
-					this._valid_input = true;
+					try
+					{
+						// Création d'un instance de la classe de type "t"
+						// et on peut l'affecter à une variable de type "Computer"
+						// puisqu'elle implémente cette interface
+						Command.Computer c = (Command.Computer)Activator.CreateInstance(t);
+						// Appel de la méthode "execute" avec les données
+						// entrees par l'utilisateur
+						Console.WriteLine("Result : " + c.Execute(values.ToArray()));
+						this._valid_input = true;
+					}
+					catch (ArgumentException e)
+					{
+						this._valid_input = true;
+						Console.WriteLine(e.Message);
+					}
 
 				}
 

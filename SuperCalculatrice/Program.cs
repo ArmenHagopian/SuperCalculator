@@ -37,8 +37,6 @@ namespace SuperCalculatrice
 				values.RemoveAt(0);
 				FindErrors error = new FindErrors(valid_input, splitinput, filePaths);
 				Console.WriteLine(error);
-
-
 	
 				input = Console.ReadLine();
 				valid_input = false;
